@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="6hb3cChuJSNKReK5aMTJoxKhrXGIXQSy3IStV4KIBBs" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEURALROSTRA — The Apex Intelligence Registry | Top AI Tools</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="NEURALROSTRA is the definitive, independent benchmark directory for top artificial intelligence models, productivity suites, and developer ecosystems.">
+  <meta name="keywords" content="AI directory, top AI tools, best AI tools, ChatGPT, Claude, Midjourney, Cursor, AI rankings, AI benchmarks">
+  <meta property="og:title" content="NEURALROSTRA — The Apex Intelligence Registry">
+  <meta property="og:description" content="Discover, compare, and submit world-class AI tools. Benchmarks, pricing, and independent reviews.">
+  <meta property="og:type" content="website">
+
+  <!-- Inter Font & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: rgba(16, 21, 33, 0.7);
+      --bg-card-hover: rgba(24, 32, 50, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(99, 102, 241, 0.3);
+      --accent-primary: #6366f1;
+      --accent-primary-glow: rgba(99, 102, 241, 0.4);
+      --accent-cyan: #06b6d4;
+      --accent-gold: #f59e0b;
+      --accent-gold-glow: rgba(245, 158, 11, 0.3);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glow Canvas */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Nominative Fair-Use Banner */
+    .fairuse-banner {
+      background: rgba(99, 102, 241, 0.08);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .fairuse-banner strong {
+      color: var(--text-main);
+    }
+
+    /* Navbar Header */
+    header {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+      background: rgba(7, 9, 14, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #fff;
+      box-shadow: 0 0 20px var(--accent-primary-glow);
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid var(--border-accent);
+      color: #a5b4fc;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border-accent);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-primary), #4f46e5);
+      color: #fff;
+      box-shadow: 0 0 15px var(--accent-primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px var(--accent-primary-glow);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      color: #000;
+      font-weight: 700;
+      box-shadow: 0 0 15px var(--accent-gold-glow);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px var(--accent-gold-glow);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 2.5rem 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid var(--border-accent);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: #a5b4fc;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #a5b4fc 0%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin: 0 auto 2rem auto;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Search & Filter Bar */
+    .controls-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(16px);
+      padding: 1.25rem;
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 1.1rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.85rem 1.25rem 0.85rem 3rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 15px var(--accent-primary-glow);
+    }
+
+    .categories-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+
+    .cat-btn {
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.825rem;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .cat-btn.active, .cat-btn:hover {
+      background: var(--accent-primary);
+      color: #fff;
+      border-color: var(--accent-primary);
+    }
+
+    /* Grid Layout */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .tool-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Sponsored Card Gold Styling */
+    .tool-card.sponsored-card {
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      background: rgba(245, 158, 11, 0.03);
+    }
+
+    .tool-card.sponsored-card:hover {
+      border-color: rgba(245, 158, 11, 0.8);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .tool-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .tool-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .rank-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .sponsored-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .tool-title-wrap h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+
+    .tool-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .tool-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .card-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      padding: 0.85rem;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .metric-val {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .upvote-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+
+    .upvote-btn:hover, .upvote-btn.upvoted {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--accent-primary);
+      color: #a5b4fc;
+    }
+
+    .action-btns {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Comparison Bar Floating */
+    .compare-float {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(16, 21, 33, 0.95);
+      border: 1px solid var(--accent-primary);
+      backdrop-filter: blur(20px);
+      padding: 0.85rem 1.5rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      z-index: 90;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .compare-float.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Modal System */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #0d121f;
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Submit Form Styling */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      font-family: var(--font-sans);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-primary);
+    }
+
+    .tier-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tier-card {
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+      padding: 0.85rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .tier-card.selected, .tier-card:hover {
+      border-color: var(--accent-primary);
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    .tier-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--font-mono);
+      margin: 0.2rem 0;
+    }
+
+    .tier-title {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Yield Calculator */
+    .calc-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-top: 1rem;
+    }
+
+    .calc-slider {
+      width: 100%;
+      margin: 0.75rem 0;
+      accent-color: var(--accent-primary);
+    }
+
+    .calc-yield {
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: var(--font-mono);
+      color: var(--accent-cyan);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer Legal */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0;
+      background: rgba(5, 7, 11, 0.9);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.1rem; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .tier-options { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambient Animation Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Nominative Fair-Use Banner -->
+  <div class="fairuse-banner">
+    <i class="fa-solid fa-shield-halved"></i>
+    <span><strong>Nominative Fair-Use Directory:</strong> NEURALROSTRA is an independent review platform. Product names are registered trademarks of their respective owners.</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-atom"></i></div>
+        <div>
+          <div class="brand-title">NEURALROSTRA</div>
+        </div>
+        <span class="brand-tag">APEX REGISTRY</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="openCalcModal()">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Earnings Calculator</span>
+        </button>
+        <button class="btn btn-gold" onclick="openSubmitModal()">
+          <i class="fa-solid fa-plus"></i>
+          <span>Submit AI Tool</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-sparkles"></i> Verified Index & Benchmark Registry — 2026 Edition
+      </div>
+      <h1 class="hero-title">
+        The World's Apex <span>Artificial Intelligence</span> Registry
+      </h1>
+      <p class="hero-subtitle">
+        Curated performance rankings, pricing metrics, speed benchmarks, and verified submission index for enterprise and creator AI systems.
+      </p>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <section class="controls-wrapper">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by name, category, or workflow (e.g., 'code', 'chat', 'video')...">
+      </div>
+      <div class="categories-row">
+        <button class="cat-btn active" data-category="all">All Tools</button>
+        <button class="cat-btn" data-category="chat">Chat & Multi-Modal</button>
+        <button class="cat-btn" data-category="code">Coding & Dev</button>
+        <button class="cat-btn" data-category="image">Image & Generative</button>
+        <button class="cat-btn" data-category="video">Video & Motion</button>
+        <button class="cat-btn" data-category="audio">Voice & Audio</button>
+        <button class="cat-btn" data-category="research">Research & Search</button>
+      </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section id="toolsGrid" class="tools-grid">
+      <!-- Dynamically Rendered by JS -->
+    </section>
+
+  </main>
+
+  <!-- Floating Comparison Bar -->
+  <div id="compareBar" class="compare-float">
+    <div>
+      <span id="compareCount" style="font-weight: 700; color: #fff;">0</span> / 3 Tools Selected
+    </div>
+    <button class="btn btn-primary" onclick="openCompareModal()">
+      <i class="fa-solid fa-code-compare"></i> Compare Selected
+    </button>
+    <button class="btn btn-outline" onclick="clearCompare()" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">Clear</button>
+  </div>
+
+  <!-- Submit Tool Modal (Monetization Engine) -->
+  <div id="submitModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSubmitModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.5rem;"><i class="fa-solid fa-rocket" style="color: var(--accent-gold);"></i> Submit an AI Tool</h2>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">Index your AI platform on NEURALROSTRA to reach over 150,000 monthly developers, creators, and enterprise buyers.</p>
+
+      <form id="submissionForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Select Placement Tier</label>
+          <div class="tier-options">
+            <div class="tier-card" onclick="selectTier('free', this)">
+              <div class="tier-title">Standard Queue</div>
+              <div class="tier-price">Free</div>
+              <div style="font-size: 0.7rem; color: var(--text-dim);">4-6 Weeks Queue</div>
+            </div>
+            <div class="tier-card selected" onclick="selectTier('fast', this)">
+              <div class="tier-title">Fast-Track</div>
+              <div class="tier-price" style="color: #a5b4fc;">$49</div>
+              <div style="font-size: 0.7rem; color: #a5b4fc;">24hr Review + Badge</div>
+            </div>
+            <div class="tier-card" onclick="selectTier('sponsor', this)">
+              <div class="tier-title">Featured Spot</div>
+              <div class="tier-price" style="color: var(--accent-gold);">$149<span style="font-size: 0.7rem;">/mo</span></div>
+              <div style="font-size: 0.7rem; color: var(--accent-gold);">#1 Grid Pin + Glow</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tool Name</label>
+          <input type="text" class="form-control" placeholder="e.g. CodeSpark AI" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Website URL</label>
+          <input type="url" class="form-control" placeholder="https://yourtool.ai" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Short Description</label>
+          <input type="text" class="form-control" placeholder="Briefly describe what your AI tool does..." required>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn btn-gold" style="width: 100%; justify-content: center; padding: 0.85rem; margin-top: 0.5rem;">
+          Proceed to Checkout ($49) <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Earnings Calculator Modal -->
+  <div id="calcModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeCalcModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.5rem;"><i class="fa-solid fa-sack-dollar" style="color: var(--accent-cyan);"></i> Directory Yield Calculator</h2>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">Project expected monthly earnings based on directory traffic, paid submissions, and affiliate referrals.</p>
+
+      <div class="calc-box">
+        <label class="form-label">Monthly Visitors: <span id="valTraffic" style="color: var(--accent-cyan);">25,000</span></label>
+        <input type="range" class="calc-slider" min="5000" max="200000" step="5000" value="25000" id="slideTraffic" oninput="updateYield()">
+
+        <label class="form-label" style="margin-top: 1rem;">Monthly Fast-Track Submissions ($49 ea): <span id="valSubs" style="color: #a5b4fc;">10</span></label>
+        <input type="range" class="calc-slider" min="0" max="50" step="1" value="10" id="slideSubs" oninput="updateYield()">
+
+        <label class="form-label" style="margin-top: 1rem;">Featured Sponsors ($149/mo): <span id="valSponsors" style="color: var(--accent-gold);">2</span></label>
+        <input type="range" class="calc-slider" min="0" max="10" step="1" value="2" id="slideSponsors" oninput="updateYield()">
+
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Projected Monthly Revenue</div>
+          <div class="calc-yield" id="totalYield">$1,538 / mo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Modal -->
+  <div id="compareModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 850px;">
+      <button class="modal-close" onclick="closeCompareModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="color: #fff; margin-bottom: 1.5rem;"><i class="fa-solid fa-code-compare" style="color: var(--accent-primary);"></i> Side-by-Side Comparison</h2>
+      <div id="compareContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div id="detailModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeDetailModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div id="detailContent">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon" style="width: 32px; height: 32px; font-size: 1rem;"><i class="fa-solid fa-atom"></i></div>
+            <span class="brand-title" style="font-size: 1.1rem;">NEURALROSTRA</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+            The industry standard registry evaluating top artificial intelligence models, productivity suites, and developer ecosystems.
+          </p>
+          <div style="font-size: 0.75rem; color: var(--text-dim);">
+            Affiliate Disclosure: Some listed external links may generate partner referral commissions.
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Directory</h4>
+          <ul>
+            <li><a href="#" onclick="filterCat('chat')">Chat Models</a></li>
+            <li><a href="#" onclick="filterCat('code')">Coding Assistants</a></li>
+            <li><a href="#" onclick="filterCat('image')">Image Generators</a></li>
+            <li><a href="#" onclick="filterCat('video')">Video Synthesis</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Monetization</h4>
+          <ul>
+            <li><a href="#" onclick="openSubmitModal()">Submit AI Tool ($49)</a></li>
+            <li><a href="#" onclick="openSubmitModal()">Sponsor Spot ($149)</a></li>
+            <li><a href="#" onclick="openCalcModal()">Earnings Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal & Compliance</h4>
+          <ul>
+            <li><a href="#" onclick="alert('Nominative Fair-Use Policy: All product names, logos, and brands are property of their respective owners.')">Fair-Use Terms</a></li>
+            <li><a href="#" onclick="alert('Privacy Policy: NEURALROSTRA does not sell personal user tracking data.')">Privacy Policy</a></li>
+            <li><a href="#" onclick="alert('Terms of Service: Directory ratings are curated based on public benchmarks.')">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 NEURALROSTRA. All rights reserved.</div>
+        <div>Built for high performance & speed.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    // Initial AI Tools Dataset
+    const toolsData = [
+      {
+        id: "codespark",
+        rank: "SPONSORED",
+        isSponsored: true,
+        name: "CodeSpark AI",
+        tagline: "Autonomous Agentic IDE & Code Assistant",
+        category: "code",
+        icon: "fa-bolt-lightning",
+        color: "#f59e0b",
+        rating: "9.9",
+        speed: "320 t/s",
+        pricing: "Free / $19 mo",
+        upvotes: 1420,
+        description: "Next-generation agentic code editor capable of autonomous multi-file refactoring, real-time bug detection, and full-stack codebase context.",
+        url: "https://example.com/codespark?via=neuralrostra",
+        features: ["Multi-file Agentic Editing", "320 tokens/sec Speed", "Zero-Latency Completion"],
+        bestFor: "Full-Stack Developers & Software Engineers"
+      },
+      {
+        id: "chatgpt",
+        rank: "#01",
+        name: "ChatGPT (GPT-4o)",
+        tagline: "Industry Standard Multi-Modal AI",
+        category: "chat",
+        icon: "fa-robot",
+        color: "#10a37f",
+        rating: "9.8",
+        speed: "180 t/s",
+        pricing: "Free / $20 mo",
+        upvotes: 3840,
+        description: "OpenAI's flagship multi-modal assistant trained for complex logic, real-time voice, image comprehension, and advanced coding.",
+        url: "https://chatgpt.com?via=neuralrostra",
+        features: ["Real-time Voice Mode", "Advanced Data Analysis", "Custom GPT Creation"],
+        bestFor: "General Intelligence, Writing & Analysis"
+      },
+      {
+        id: "claude",
+        rank: "#02",
+        name: "Claude 3.5 Sonnet",
+        tagline: "Apex Reasoning & Artifact Builder",
+        category: "chat",
+        icon: "fa-brain",
+        color: "#d97706",
+        rating: "9.9",
+        speed: "160 t/s",
+        pricing: "Free / $20 mo",
+        upvotes: 3620,
+        description: "Anthropic's leading reasoning model famous for human-grade writing nuance, code architecture, and interactive Artifacts canvas.",
+        url: "https://claude.ai?via=neuralrostra",
+        features: ["Interactive Artifacts Canvas", "200k Context Window", "Nuanced Enterprise Writing"],
+        bestFor: "Complex Code Logic & Deep Content Writing"
+      },
+      {
+        id: "midjourney",
+        rank: "#03",
+        name: "Midjourney v6",
+        tagline: "Photorealistic Generative Art",
+        category: "image",
+        icon: "fa-wand-magic-sparkles",
+        color: "#3b82f6",
+        rating: "9.7",
+        speed: "Ultra HD",
+        pricing: "$10 mo",
+        upvotes: 2950,
+        description: "Unrivaled image generation engine delivering photorealistic textures, dynamic typography rendering, and cinematic lighting controls.",
+        url: "https://midjourney.com?via=neuralrostra",
+        features: ["In-painting & Out-painting", "Precise Style Referencing", "Vary Region Controls"],
+        bestFor: "Digital Artists, Designers & Marketers"
+      },
+      {
+        id: "cursor",
+        rank: "#04",
+        name: "Cursor Editor",
+        tagline: "AI-First Code Editor Built on VS Code",
+        category: "code",
+        icon: "fa-code",
+        color: "#06b6d4",
+        rating: "9.8",
+        speed: "Instant",
+        pricing: "Free / $20 mo",
+        upvotes: 2710,
+        description: "A fork of VS Code engineered around AI capabilities like multi-file edit predictions, terminal command generation, and repository indexing.",
+        url: "https://cursor.com?via=neuralrostra",
+        features: ["Repo-wide Indexing", "Terminal Error Fixes", "Multi-line Autocomplete"],
+        bestFor: "Software Engineers & Full Stack Developers"
+      },
+      {
+        id: "elevenlabs",
+        rank: "#05",
+        name: "ElevenLabs",
+        tagline: "Human-Quality Voice Synthesis",
+        category: "audio",
+        icon: "fa-waveform-lines",
+        color: "#8b5cf6",
+        rating: "9.6",
+        speed: "Real-time",
+        pricing: "Free / $5 mo",
+        upvotes: 2430,
+        description: "State-of-the-art voice cloning, text-to-speech, and dubbing platform capable of emotional nuance across 30+ global languages.",
+        url: "https://elevenlabs.io?via=neuralrostra",
+        features: ["Instant Voice Cloning", "Emotional Tone Tuning", "Multi-lingual Dubbing"],
+        bestFor: "Podcasters, Game Developers & Video Creators"
+      },
+      {
+        id: "runway",
+        rank: "#06",
+        name: "Runway Gen-3 Alpha",
+        tagline: "Cinematic AI Video Synthesis",
+        category: "video",
+        icon: "fa-film",
+        color: "#ec4899",
+        rating: "9.5",
+        speed: "4K Render",
+        pricing: "Free / $12 mo",
+        upvotes: 2180,
+        description: "Professional generative video platform offering precise camera control, temporal consistency, and motion brush controls.",
+        url: "https://runwayml.com?via=neuralrostra",
+        features: ["Motion Brush Controls", "Camera Path Steering", "4K Video Upscaling"],
+        bestFor: "Filmmakers, VFX Artists & Animators"
+      },
+      {
+        id: "perplexity",
+        rank: "#07",
+        name: "Perplexity AI",
+        tagline: "Conversational Search Engine",
+        category: "research",
+        icon: "fa-magnifying-glass-chart",
+        color: "#14b8a6",
+        rating: "9.6",
+        speed: "Real-time",
+        pricing: "Free / $20 mo",
+        upvotes: 2050,
+        description: "An answer engine delivering direct cited answers to complex queries with real-time web grounding and academic source filtering.",
+        url: "https://perplexity.ai?via=neuralrostra",
+        features: ["Live Academic Citations", "Pro Search Guided Flows", "File Upload Analysis"],
+        bestFor: "Researchers, Analysts & Students"
+      },
+      {
+        id: "copilot",
+        rank: "#08",
+        name: "GitHub Copilot",
+        tagline: "Enterprise Pair Programmer",
+        category: "code",
+        icon: "fa-github",
+        color: "#6366f1",
+        rating: "9.4",
+        speed: "Real-time",
+        pricing: "$10 mo",
+        upvotes: 1890,
+        description: "GitHub's official AI pair programmer seamlessly integrated into major IDEs to accelerate coding velocity and test writing.",
+        url: "https://github.com/features/copilot?via=neuralrostra",
+        features: ["IDE Integration", "CLI Tool Assistance", "Automated Pull Request Summaries"],
+        bestFor: "Enterprise Engineering Teams"
+      },
+      {
+        id: "notion",
+        rank: "#09",
+        name: "Notion AI",
+        tagline: "Connected Knowledge & Workspace AI",
+        category: "chat",
+        icon: "fa-book-open",
+        color: "#64748b",
+        rating: "9.3",
+        speed: "Instant",
+        pricing: "$8 mo",
+        upvotes: 1620,
+        description: "Integrated workspace assistant that queries your internal company wiki, drafts documentation, and formats structured notes.",
+        url: "https://notion.so?via=neuralrostra",
+        features: ["Workspace Context Search", "Automatic Action Item Extraction", "Document Summarization"],
+        bestFor: "Product Teams & Knowledge Workers"
+      }
+    ];
+
+    let selectedCompare = [];
+    let selectedSubmissionTier = "fast";
+
+    // Initialize Page
+    document.addEventListener("DOMContentLoaded", () => {
+      renderGrid(toolsData);
+      initBgCanvas();
+      setupSearchAndFilters();
+    });
+
+    // Render Grid Cards
+    function renderGrid(tools) {
+      const grid = document.getElementById("toolsGrid");
+      grid.innerHTML = "";
+
+      tools.forEach(tool => {
+        const isSelected = selectedCompare.includes(tool.id);
+        const card = document.createElement("div");
+        card.className = `tool-card ${tool.isSponsored ? 'sponsored-card' : ''}`;
+        
+        card.innerHTML = `
+          <div class="card-top">
+            <div class="tool-meta">
+              <div class="tool-icon" style="border-color: ${tool.color}33; color: ${tool.color};">
+                <i class="fa-solid ${tool.icon}"></i>
+              </div>
+              <div class="tool-title-wrap">
+                <h3>${tool.name}</h3>
+                <div class="tool-tagline">${tool.tagline}</div>
+              </div>
+            </div>
+            ${tool.isSponsored ? `
+              <div class="sponsored-badge"><i class="fa-solid fa-star"></i> SPONSORED</div>
+            ` : `
+              <div class="rank-badge">${tool.rank}</div>
+            `}
+          </div>
+
+          <p class="tool-desc">${tool.description}</p>
+
+          <div class="card-metrics">
+            <div class="metric-item">
+              <span class="metric-label">Rating</span>
+              <span class="metric-val" style="color: #a5b4fc;"><i class="fa-solid fa-star" style="color: var(--accent-gold); font-size: 0.75rem;"></i> ${tool.rating}/10</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Pricing</span>
+              <span class="metric-val">${tool.pricing}</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Speed Rating</span>
+              <span class="metric-val">${tool.speed}</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Category</span>
+              <span class="metric-val" style="text-transform: capitalize;">${tool.category}</span>
+            </div>
+          </div>
+
+          <div class="card-bottom">
+            <button class="upvote-btn" onclick="toggleUpvote('${tool.id}', this)">
+              <i class="fa-solid fa-caret-up"></i> <span>${tool.upvotes}</span>
+            </button>
+
+            <div class="action-btns">
+              <button class="btn btn-outline" style="padding: 0.45rem 0.65rem; font-size: 0.8rem;" onclick="toggleCompare('${tool.id}')">
+                <i class="fa-solid ${isSelected ? 'fa-check' : 'fa-plus'}"></i> ${isSelected ? 'Added' : 'Compare'}
+              </button>
+              <button class="btn btn-outline" style="padding: 0.45rem 0.65rem; font-size: 0.8rem;" onclick="openDetailModal('${tool.id}')">
+                Details
+              </button>
+              <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.45rem 0.75rem; font-size: 0.8rem;">
+                Visit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
+              </a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Search and Category Filtering
+    function setupSearchAndFilters() {
+      const searchInput = document.getElementById("searchInput");
+      const catBtns = document.querySelectorAll(".cat-btn");
+
+      searchInput.addEventListener("input", filterTools);
+
+      catBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          catBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          filterTools();
+        });
+      });
+    }
+
+    function filterTools() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const activeCategory = document.querySelector(".cat-btn.active").getAttribute("data-category");
+
+      const filtered = toolsData.filter(tool => {
+        const matchesCat = activeCategory === "all" || tool.category === activeCategory;
+        const matchesSearch = tool.name.toLowerCase().includes(query) ||
+                              tool.description.toLowerCase().includes(query) ||
+                              tool.tagline.toLowerCase().includes(query);
+        return matchesCat && matchesSearch;
+      });
+
+      renderGrid(filtered);
+    }
+
+    function filterCat(cat) {
+      document.querySelectorAll(".cat-btn").forEach(b => {
+        if (b.getAttribute("data-category") === cat) b.click();
+      });
+    }
+
+    // Upvote Toggle
+    function toggleUpvote(id, btn) {
+      const tool = toolsData.find(t => t.id === id);
+      if (!btn.classList.contains("upvoted")) {
+        tool.upvotes++;
+        btn.classList.add("upvoted");
+      } else {
+        tool.upvotes--;
+        btn.classList.remove("upvoted");
+      }
+      btn.querySelector("span").textContent = tool.upvotes;
+    }
+
+    // Compare System Logic
+    function toggleCompare(id) {
+      if (selectedCompare.includes(id)) {
+        selectedCompare = selectedCompare.filter(item => item !== id);
+      } else {
+        if (selectedCompare.length >= 3) {
+          alert("You can compare up to 3 tools simultaneously.");
+          return;
+        }
+        selectedCompare.push(id);
+      }
+
+      updateCompareBar();
+      filterTools();
+    }
+
+    function updateCompareBar() {
+      const bar = document.getElementById("compareBar");
+      const count = document.getElementById("compareCount");
+      count.textContent = selectedCompare.length;
+
+      if (selectedCompare.length > 0) {
+        bar.classList.add("visible");
+      } else {
+        bar.classList.remove("visible");
+      }
+    }
+
+    function clearCompare() {
+      selectedCompare = [];
+      updateCompareBar();
+      filterTools();
+    }
+
+    function openCompareModal() {
+      const content = document.getElementById("compareContent");
+      content.innerHTML = "";
+
+      const items = toolsData.filter(t => selectedCompare.includes(t.id));
+      items.forEach(tool => {
+        const col = document.createElement("div");
+        col.style.cssText = "background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 12px;";
+        col.innerHTML = `
+          <h3 style="color: #fff; margin-bottom: 0.5rem;">${tool.name}</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">${tool.tagline}</p>
+          <div style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div><strong>Rating:</strong> ${tool.rating}/10</div>
+            <div><strong>Pricing:</strong> ${tool.pricing}</div>
+            <div><strong>Speed:</strong> ${tool.speed}</div>
+            <div><strong>Best For:</strong> ${tool.bestFor}</div>
+          </div>
+        `;
+        content.appendChild(col);
+      });
+
+      document.getElementById("compareModal").classList.add("active");
+    }
+
+    function closeCompareModal() {
+      document.getElementById("compareModal").classList.remove("active");
+    }
+
+    // Detail Modal
+    function openDetailModal(id) {
+      const tool = toolsData.find(t => t.id === id);
+      const content = document.getElementById("detailContent");
+
+      content.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <div class="tool-icon" style="color: ${tool.color};"><i class="fa-solid ${tool.icon}"></i></div>
+          <div>
+            <h2 style="color: #fff; font-size: 1.4rem;">${tool.name}</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">${tool.tagline}</p>
+          </div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">${tool.description}</p>
+        
+        <h4 style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">Key Capability Highlights:</h4>
+        <ul style="list-style: none; margin-bottom: 1.5rem;">
+          ${tool.features.map(f => `<li style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;"><i class="fa-solid fa-check" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> ${f}</li>`).join('')}
+        </ul>
+
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="${tool.url}" target="_blank" class="btn btn-primary" style="flex: 1; justify-content: center;">Visit Official Site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      `;
+
+      document.getElementById("detailModal").classList.add("active");
+    }
+
+    function closeDetailModal() {
+      document.getElementById("detailModal").classList.remove("active");
+    }
+
+    // Submission & Monetization System
+    function openSubmitModal() {
+      document.getElementById("submitModal").classList.add("active");
+    }
+
+    function closeSubmitModal() {
+      document.getElementById("submitModal").classList.remove("active");
+    }
+
+    function selectTier(tier, card) {
+      selectedSubmissionTier = tier;
+      document.querySelectorAll(".tier-card").forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+
+      const btn = document.getElementById("submitBtn");
+      if (tier === "free") btn.innerHTML = 'Submit to Backlog Queue (Free) <i class="fa-solid fa-arrow-right"></i>';
+      if (tier === "fast") btn.innerHTML = 'Proceed to Checkout ($49) <i class="fa-solid fa-arrow-right"></i>';
+      if (tier === "sponsor") btn.innerHTML = 'Proceed to Checkout ($149/mo) <i class="fa-solid fa-arrow-right"></i>';
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      if (selectedSubmissionTier === "free") {
+        alert("Submission received! Your tool has been added to our backlog review queue.");
+      } else {
+        // Redirect to live payment link
+        alert(`Redirecting to secure payment checkout for ${selectedSubmissionTier === 'fast' ? '$49' : '$149/mo'}...`);
+        window.open("https://stripe.com", "_blank");
+      }
+      closeSubmitModal();
+    }
+
+    // Yield Calculator Logic
+    function openCalcModal() {
+      document.getElementById("calcModal").classList.add("active");
+      updateYield();
+    }
+
+    function closeCalcModal() {
+      document.getElementById("calcModal").classList.remove("active");
+    }
+
+    function updateYield() {
+      const traffic = parseInt(document.getElementById("slideTraffic").value);
+      const subs = parseInt(document.getElementById("slideSubs").value);
+      const sponsors = parseInt(document.getElementById("slideSponsors").value);
+
+      document.getElementById("valTraffic").textContent = traffic.toLocaleString();
+      document.getElementById("valSubs").textContent = subs;
+      document.getElementById("valSponsors").textContent = sponsors;
+
+      // Formula: Affiliate earnings (~1.5% traffic conversion @ $15) + Submissions ($49 ea) + Sponsors ($149 ea)
+      const affiliateYield = Math.round((traffic * 0.0015) * 15);
+      const submissionYield = subs * 49;
+      const sponsorYield = sponsors * 149;
+      const total = affiliateYield + submissionYield + sponsorYield;
+
+      document.getElementById("totalYield").textContent = `$${total.toLocaleString()} / mo`;
+    }
+
+    // Ambient Particle Background
+    function initBgCanvas() {
+      const canvas = document.getElementById("bg-canvas");
+      const ctx = canvas.getContext("2d");
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener("resize", resize);
+
+      const particles = Array.from({ length: 45 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4
+      }));
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "rgba(99, 102, 241, 0.3)";
+
+        particles.forEach(p => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+  </script>
+</body>
+</html>
